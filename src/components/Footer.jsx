@@ -4,6 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 export const Footer = () => {
   return (
     <footer className="bg-[#D9EAFD] text-blue-950 py-10">
+      <div className="divider mt-0"></div>
       <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo and About Section */}
         <div className="flex flex-col items-start">

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Fiction",
+    "description": "Explore imaginative worlds and intriguing stories.",
+    "image": "https://i.ibb.co.com/60VgXkC/Fiction.png"
+  },
+  {
+    "id": "2",
+    "name": "Science",
+    "description": "Delve into the wonders of science and discoveries.",
+    "image": "https://i.ibb.co.com/YjrFSGm/Science.png"
+  },
+  {
+    "id": "3",
+    "name": "Biography",
+    "description": "Learn about the lives of extraordinary people.",
+    "image": "https://i.ibb.co.com/7W5DY5G/Biography.png"
+  },
+  {
+    "id": "4",
+    "name": "Parenting",
+    "description": "Empower yourself with books that inspire growth.",
+    "image": "https://i.ibb.co.com/C5bgwgF/Parenting.png"
+  }
+]

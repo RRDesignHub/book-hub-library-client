@@ -9,11 +9,12 @@ export const MainLayout = () => {
         <Navbar></Navbar>
       </header>
 
-      <main className="min-h-[calc(100vh-420px)] bg-gradient-to-br from-[#F8FAFC] to-[#D9EAFD]">
+      <main className="min-h-[calc(100vh-420px)] bg-[#F8FAFC]">
         <Outlet></Outlet>
       </main>
 
-      <footer>
+      <footer >
+        
         <Footer></Footer>
       </footer>
     </>

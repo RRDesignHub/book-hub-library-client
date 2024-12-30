@@ -80,7 +80,7 @@ export const Register = () => {
   };
   
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#F8FAFC]">
+    <div className="flex items-center justify-center w-11/12 mx-auto ">
       <div className="w-full max-w-md bg-[#D9EAFD] shadow-lg rounded-lg p-8 my-10">
         <h1 className="text-2xl md:text-3xl font-bold text-center text-[#2C3E50] mb-3">
           Create an Account

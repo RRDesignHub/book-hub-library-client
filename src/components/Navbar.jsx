@@ -41,7 +41,7 @@ export const Navbar = () => {
               ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
               : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
           }
-          to="/all_visas"
+          to="/allBooks"
         >
           All Books
         </NavLink>
@@ -53,7 +53,7 @@ export const Navbar = () => {
               ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
               : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
           }
-          to="/add_visa"
+          to="/addBook"
         >
           Add Book
         </NavLink>

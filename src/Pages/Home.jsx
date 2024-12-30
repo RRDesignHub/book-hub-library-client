@@ -1,9 +1,11 @@
+import { BookCategoryCard } from "../components/BookCategoryCard"
 import { Hero } from "../components/Hero"
 
 export const Home = () => {
   return (
     <>
       <Hero></Hero>
+      <BookCategoryCard></BookCategoryCard>
     </>
   )
 }

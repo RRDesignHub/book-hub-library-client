@@ -44,8 +44,8 @@ export const Login = () => {
       });
   };
   return (
-    <div className="hero bg-[#F8FAFC] py-6">
-      <div className="hero-content flex-col lg:flex-row-reverse w-11/12 mx-auto">
+    <div className="hero  py-6">
+      <div className="hero-content flex-col lg:flex-row-reverse md:w-11/12 mx-auto">
         {/* Login Info Section */}
         <div className="text-center lg:text-left w-full lg:w-1/2">
           <h1 className="text-5xl font-bold text-[#2E384D]">Login now!</h1>
@@ -57,7 +57,7 @@ export const Login = () => {
         </div>
 
         {/* Login Form Section */}
-        <div className="card bg-[#D9EAFD] w-full max-w-sm shadow-2xl lg:w-1/2">
+        <div className="card bg-[#D9EAFD] w-full shadow-2xl lg:w-1/2">
           <form className="card-body pb-0" onSubmit={handleLogin}>
             {/* Email Input */}
             <div className="form-control">
