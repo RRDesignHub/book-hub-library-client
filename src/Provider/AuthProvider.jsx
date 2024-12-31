@@ -76,7 +76,7 @@ export const AuthProvider = ({ children }) => {
       //       setLoader(false);
       //     });
       // }
-      
+      setLoader(false)
     });
     return () => {
       currentSubscriber();

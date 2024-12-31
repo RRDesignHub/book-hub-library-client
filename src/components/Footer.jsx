@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "./../assets/Logo.png";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 export const Footer = () => {
@@ -23,41 +23,57 @@ export const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
           <ul className="space-y-2">
+          <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
+              : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
+              : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
+          }
+          to="/allBooks"
+        >
+          All Books
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
+              : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
+          }
+          to="/addBook"
+        >
+          Add Book
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
+              : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
+          }
+          to="/borrowedBooks"
+        >
+          Borrowed Books
+        </NavLink>
+      </li>
             <li>
               <a
                 href="/"
-                className="text-gray-700 hover:text-blue-950 hover:underline"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="/all_books"
-                className="text-gray-700 hover:text-blue-950 hover:underline"
-              >
-                All Books
-              </a>
-            </li>
-            <li>
-              <a
-                href="/add_book"
-                className="text-gray-700 hover:text-blue-950 hover:underline"
-              >
-                Add Book
-              </a>
-            </li>
-            <li>
-              <a
-                href="/borrowed_books"
-                className="text-gray-700 hover:text-blue-950 hover:underline"
-              >
-                Borrowed Books
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
                 className="text-gray-700 hover:text-blue-950 hover:underline"
               >
                 Contact Us

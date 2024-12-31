@@ -65,7 +65,7 @@ export const Navbar = () => {
               ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
               : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
           }
-          to="/my_added_visa"
+          to="/borrowedBooks"
         >
           Borrowed Books
         </NavLink>

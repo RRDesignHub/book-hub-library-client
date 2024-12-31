@@ -1,17 +1,20 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
 export const AllBooks = () => {
   const [books, setBooks] = useState([]);
 
-  useEffect(() =>{
+  useEffect(() => {
     handleAllBooks();
-  },[])
+  }, []);
 
-  const handleAllBooks = async() =>{
-    const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/allBooks`)
+  const handleAllBooks = async () => {
+    const { data } = await axios.get(
+      `${import.meta.env.VITE_API_URL}/allBooks`
+    );
     setBooks(data);
-  }
+  };
   return (
     <div className="bg-[#F8FAFC] pb-10 pt-3 max-sm:w-11/12 md:w-11/12 mx-auto min-h-screen">
       <div className="container mx-auto">
@@ -19,7 +22,6 @@ export const AllBooks = () => {
           All Books
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-         
           {books.map((book) => (
             <div
               key={book._id}
@@ -40,15 +42,21 @@ export const AllBooks = () => {
                 Category: {book?.bookCategory}
               </p>
               <div className="flex items-center gap-1 text-sm text-gray-600 mb-3">
-                Rating: <span className="font-semibold">{book?.rating}/5</span>
+                Rating:
+                <ReactStars
+                  count={5}
+                  value={book?.rating || 0}
+                  size={24}
+                  edit={false}
+                  activeColor="#ffd700"
+                />
               </div>
               <div className="flex-grow"></div>
-              <button
-                // onClick={() => navigate(`/update-book/${book.id}`)}
-                className="w-full py-2 px-4 bg-[#334155] hover:bg-[#9AA6B2] text-white font-medium rounded-md transition"
-              >
-                Update
-              </button>
+              <Link to={`/update/${book?._id}`}>
+                <button className="w-full py-2 px-4 bg-[#334155] hover:bg-[#9AA6B2] text-white font-medium rounded-md transition">
+                  Update
+                </button>
+              </Link>
             </div>
           ))}
         </div>
