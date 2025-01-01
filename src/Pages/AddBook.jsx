@@ -2,6 +2,7 @@ import React from "react";
 import axios from 'axios';
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 export const AddBook = () => {
   const navigate = useNavigate();
   const handleAddBook = async(e) =>{
@@ -35,6 +36,10 @@ export const AddBook = () => {
     
   }
   return (
+    <>
+    <Helmet>
+        <title>BH - Add Book</title>
+      </Helmet>
     <div className=" max-sm:w-11/12 mx-auto min-h-screen py-10">
       <div className="container mx-auto max-w-4xl bg-[#D9EAFD] p-8 rounded-lg shadow-md">
         <h1 className="text-3xl font-bold text-center text-[#334155] mb-6">
@@ -165,5 +170,6 @@ export const AddBook = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

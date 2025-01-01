@@ -9,15 +9,19 @@ import Modal from 'react-modal';
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import Loading from "../components/Loading";
+import { Helmet } from "react-helmet";
 
 export const BookDetails = () => {
   const {user} = useContext(AuthContext);
   const [bookDetails, setBookDetails] = useState(null);
   const { id } = useParams();
+  const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [returnDate, setReturnDate] = useState(new Date());
   useEffect(() => {
+    setLoading(true)
     handleBookDetails();
+    setLoading(false)
   }, []);
 
   const handleBookDetails = async () => {
@@ -52,18 +56,23 @@ export const BookDetails = () => {
         handleBookDetails();
       }
     }catch(err){
-      toast.error(err.message)
-      console.log(err.message)
+      if(err?.response?.data?.message){
+        toast.error(err?.response?.data?.message)
+      }
+      console.log(err)
     }
-
-   
-
     setIsModalOpen(false);
   };
 
   return (
+<>
+    <Helmet>
+    <title >BH - Book Details</title>
+  </Helmet>
     <div className="bg-[#F8FAFC] w-11/12 mx-auto min-h-screen py-10">
-      {!bookDetails ? 
+      {loading ? 
+      <Loading></Loading> :
+      !bookDetails ?
       <Loading></Loading> :
       (
         <div className="container mx-auto">
@@ -73,7 +82,7 @@ export const BookDetails = () => {
               <img
                 src={bookDetails?.coverURL}
                 alt={bookDetails?.bookTitle}
-                className="w-64 h-auto rounded-md shadow-2xl"
+                className="w-64 h-fit rounded-md shadow-2xl"
               />
             </div>
 
@@ -121,7 +130,8 @@ export const BookDetails = () => {
             </div>
           </div>
         </div>
-      )}
+      )
+    }
 
       {/* Borrow Modal */}
       <Modal
@@ -182,5 +192,6 @@ export const BookDetails = () => {
         </form>
       </Modal>
     </div>
+    </>
   );
 };

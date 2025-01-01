@@ -25,7 +25,7 @@ export const UpdateBook = () => {
 
     const coverURL = form.photoURL.value;
     const bookTitle = form.bookTitle.value;
-    const bookQuantity = form.bookQuantity.value;
+    const bookQuantity = parseInt(form.bookQuantity.value);
     const authorName = form.authorName.value;
     const bookCategory = form.bookCategory.value;
     const description = form.description.value;

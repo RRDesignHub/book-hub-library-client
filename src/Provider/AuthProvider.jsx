@@ -12,6 +12,7 @@ import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 export const AuthContext = createContext();
@@ -60,22 +61,8 @@ export const AuthProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    const currentSubscriber = onAuthStateChanged(auth, (currentUser) => {
+    const currentSubscriber = onAuthStateChanged(auth, async(currentUser) => {
       setUser(currentUser);
-      // if(currentUser?.email){
-      //   const user = {email: currentUser.email};
-      //   axios.post('https://visa-navigator-server-swart.vercel.app/jwt', user, {withCredentials: true})
-      //     .then(res => {
-      //       console.log(res.data);
-      //       setLoader(false);
-      //     })
-      // }else{
-      //   axios.post('https://visa-navigator-server-swart.vercel.app/logout', {}, {withCredentials: true})
-      //     .then(res => {
-      //       console.log(res.data);
-      //       setLoader(false);
-      //     });
-      // }
       setLoader(false)
     });
     return () => {

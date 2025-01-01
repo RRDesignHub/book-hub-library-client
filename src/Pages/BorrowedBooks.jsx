@@ -4,6 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Loading from "../components/Loading";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
+import { linkWithCredential } from "firebase/auth";
 
 export const BorrowedBooks = () => {
   const { user } = useContext(AuthContext);
@@ -39,13 +41,16 @@ export const BorrowedBooks = () => {
   
   return (
     <>
+    <Helmet>
+        <title>BH - Borrowed Book</title>
+      </Helmet>
       {loading ? (
         <Loading></Loading>
-      ) : (
+      ) : 
+      books.length > 0 ?
+      (
         <div className="container w-11/12 mx-auto py-8">
           {
-            books.length == 0 ? 
-            <h1 className="text-2xl md:text-3xl text-center font-bold text-[#334155] mb-6">You haven't borrowed any books yet!!!</h1>:
             <h1 className="text-2xl md:text-3xl text-center font-bold text-[#334155] mb-6">
             My Borrowed Books
           </h1>
@@ -100,7 +105,9 @@ export const BorrowedBooks = () => {
             ))}
           </div>
         </div>
-      )}
+      ) :
+      <h1 className="text-2xl py-5 md:text-3xl text-center font-bold text-[#334155] mb-6">You haven't borrowed any books yet!!!</h1>
+      }
     </>
   );
 };

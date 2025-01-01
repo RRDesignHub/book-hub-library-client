@@ -3,11 +3,15 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import Loading from "../components/Loading";
+import { Helmet } from "react-helmet";
 export const CategorizedBooks = () => {
   const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(false);
   const { category } = useParams();
   useEffect(() => {
+    setLoading(true);
     handleCategorizedBooks();
+    setLoading(false);
   }, []);
 
   const handleCategorizedBooks = async () => {
@@ -18,10 +22,16 @@ export const CategorizedBooks = () => {
   };
 
   return (
+    <>
+     <Helmet>
+        <title>BH - {category}</title>
+      </Helmet>
     <div className="bg-[#F8FAFC] py-10 w-11/12 mx-auto">
       {
-        books.length == 0 ? 
-        <Loading></Loading> :
+        loading ? 
+        <Loading></Loading> : 
+        books.length === 0 ?
+        <h1 className="text-2xl md:text-3xl font-bold text-[#43556ee5] mb-6 text-center">No books available in this category.</h1> :
         <div className="container mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold text-[#43556ee5] mb-6 text-center">
           Total {books.length} Books in{" "}
@@ -79,5 +89,6 @@ export const CategorizedBooks = () => {
       </div>
       }
     </div>
+    </>
   );
 };
