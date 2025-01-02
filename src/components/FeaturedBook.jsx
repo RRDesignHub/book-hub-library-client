@@ -1,5 +1,4 @@
 import axios from "axios";
-import { easeInOut } from "motion";
 import { motion } from "motion/react"
 import { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
