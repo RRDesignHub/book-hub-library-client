@@ -45,7 +45,7 @@ export const FeaturedBook = () => {
               featuredBooks.map((book) => (
                 <SwiperSlide key={book._id}>
                   <div className="container mx-auto">
-                    <div className="bg-[#D9EAFD] rounded-lg shadow-lg p-6 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-[#D9EAFD] h-[950px] md:h-[500px] rounded-lg shadow-lg p-6 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
                       {/* Book Image */}
                       <div className="flex justify-center">
                         <img
@@ -84,7 +84,7 @@ export const FeaturedBook = () => {
                         </div>
 
                         <p className="text-[#6B7280] text-justify mb-6">
-                          {book?.description}
+                          {book?.description.slice(0,200)}...
                         </p>
 
                         <Link to={`/book/${book?._id}`}>

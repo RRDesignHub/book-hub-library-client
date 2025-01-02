@@ -35,11 +35,11 @@ export const AllBooks = () => {
       ) : (
         <div className="bg-[#F8FAFC] pb-10 pt-3 max-sm:w-11/12 md:w-11/12 mx-auto min-h-screen">
           <div className="container mx-auto">
-            <div className="flex justify-between items-center">
-              <h2 className="text-2xl md:text-4xl font-bold text-[#334155] mb-8 text-center">
+            <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+              <h2 className="text-2xl md:text-4xl font-bold text-[#334155] mb-4 md:mb-8 text-center">
                 All Books
               </h2>
-              <div className="flex items-center">
+              <div className="flex items-center max-sm:flex-wrap max-sm:justify-center max-sm:gap-2">
                 <select
                   value={view}
                   onChange={(e) => setView(e.target.value)}

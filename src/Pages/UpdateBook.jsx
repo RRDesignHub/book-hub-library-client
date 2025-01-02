@@ -46,7 +46,7 @@ export const UpdateBook = () => {
   }
  
   return (
-    <div className="bg-[#F8FAFC] min-h-screen py-10">
+    <div className="w-11/12 mx-auto bg-[#F8FAFC] min-h-screen py-10">
       <div className="container mx-auto max-w-3xl">
         {
           book && <div className="bg-[#D9EAFD] rounded-lg shadow-lg p-8">

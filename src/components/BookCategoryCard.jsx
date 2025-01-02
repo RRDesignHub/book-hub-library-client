@@ -9,7 +9,7 @@ export const BookCategoryCard = () => {
       .then((data) => setCategories(data));
   }, []);
   return (
-    <div className="bg-[#F8FAFC] py-10">
+    <div className="w-11/12 mx-auto bg-[#F8FAFC] py-10">
       <div className="container mx-auto">
         <h2 className="text-2xl md:text-4xl font-bold text-[#334155] mb-6 text-center">
           Explore Categories
