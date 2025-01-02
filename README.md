@@ -4,7 +4,7 @@
 The **Book Hub** is a web-based application designed for a school to efficiently manage its library operations. The platform allows administrators to add, update, categorize, and track books, while providing users with a seamless interface to borrow and explore the library's collection.
 
 ## Live URL
-[Live Site Link](#) *(Replace with your deployed URL)*
+[Live Site Link](https://book-hub-library.netlify.app/) 
 
 ## Key Features
 
@@ -51,3 +51,30 @@ The **Book Hub** is a web-based application designed for a school to efficiently
 ### Deployment
 - **Frontend**: Hosted on Netlify.
 - **Backend**: Hosted on a production server Vercel.
+
+
+## Recommended NPM Packages
+
+### Client-Side
+- `react-rating-stars-component`: For rendering book ratings.
+- `swiper`: For banner sliders and carousels.
+- `axios`: For managing API requests.
+- `date-fns`: For date manipulation.
+- `firebase`: For Firebase integration.
+- `match-sorter`: For efficient filtering and sorting.
+- `motion`: For animations.
+- `react-datepicker`: For date selection in forms.
+- `react-helmet`: For managing document head.
+- `react-hot-toast`: For stylish notifications.
+- `react-icons`: For iconography.
+- `react-modal`: For modals.
+- `sort-by`: For sorting data.
+
+### Server-Side
+- `dotenv`: For environment variable management.
+- `mongoose`: For MongoDB integration.
+
+## Optional Enhancements
+- Framer Motion animations for dynamic UI interactions.
+- Limit of 3 books per user for borrowing.
+- Use of Swiper JS for interactive sliders.
