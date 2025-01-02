@@ -11,7 +11,7 @@ export const Footer = () => {
           <img
             src={logo}
             alt="BookHub Logo"
-            className="h-[50px] mb-4 drop-shadow-sm"
+            className="h-[50px] mb-4 rounded-md md:rounded-lg drop-shadow-sm"
           />
           <p className="text-gray-700 leading-relaxed">
             Welcome to Book Hub, your one-stop solution for managing books and

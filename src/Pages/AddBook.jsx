@@ -42,7 +42,7 @@ export const AddBook = () => {
       </Helmet>
     <div className=" max-sm:w-11/12 mx-auto min-h-screen py-10">
       <div className="container mx-auto max-w-4xl bg-[#D9EAFD] p-8 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold text-center text-[#334155] mb-6">
+        <h1 className="text-2xl md:text-4xl font-bold text-center text-[#334155] mb-6">
           Add a New Book
         </h1>
         <form onSubmit={handleAddBook}>

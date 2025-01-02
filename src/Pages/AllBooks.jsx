@@ -36,7 +36,7 @@ export const AllBooks = () => {
         <div className="bg-[#F8FAFC] pb-10 pt-3 max-sm:w-11/12 md:w-11/12 mx-auto min-h-screen">
           <div className="container mx-auto">
             <div className="flex justify-between items-center">
-              <h2 className="text-3xl font-bold text-[#334155] mb-8 text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-[#334155] mb-8 text-center">
                 All Books
               </h2>
               <div className="flex items-center">

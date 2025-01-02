@@ -11,7 +11,7 @@ export const BookCategoryCard = () => {
   return (
     <div className="bg-[#F8FAFC] py-10">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-[#334155] mb-6 text-center">
+        <h2 className="text-2xl md:text-4xl font-bold text-[#334155] mb-6 text-center">
           Explore Categories
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -134,7 +134,7 @@ export const Navbar = () => {
         <div className="flex-1">
           <Link to="/" className="flex items-center gap-1 md:gap-2">
             <img
-              className="h-[30px] md:h-[50px] rounded-xl drop-shadow-lg"
+              className="h-[30px] md:h-[50px] rounded-md md:rounded-lg drop-shadow-lg"
               src={logo}
               alt="Book Hub logo"
             />

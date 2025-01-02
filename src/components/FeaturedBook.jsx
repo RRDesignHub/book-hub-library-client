@@ -22,8 +22,8 @@ export const FeaturedBook = () => {
   return (
     <div className="bg-[#F8FAFC] py-10">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-[#334155] mb-6 text-center">
-          📚 Featured Books
+        <h2 className="text-2xl md:text-4xl font-bold text-[#334155] mb-6 text-center">
+          Featured Books
         </h2>
 
         <Swiper

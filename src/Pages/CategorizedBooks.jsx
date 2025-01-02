@@ -33,7 +33,7 @@ export const CategorizedBooks = () => {
         books.length === 0 ?
         <h1 className="text-2xl md:text-3xl font-bold text-[#43556ee5] mb-6 text-center">No books available in this category.</h1> :
         <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#43556ee5] mb-6 text-center">
+        <h2 className="text-2xl md:text-4xl  font-bold text-[#43556ee5] mb-6 text-center">
           Total {books.length} Books in{" "}
           <span className="text-[#334155]">{category}</span> Category.
         </h2>

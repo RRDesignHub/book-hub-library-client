@@ -51,7 +51,7 @@ export const BorrowedBooks = () => {
       (
         <div className="container w-11/12 mx-auto py-8">
           {
-            <h1 className="text-2xl md:text-3xl text-center font-bold text-[#334155] mb-6">
+            <h1 className="text-2xl md:text-4xl text-center font-bold text-[#334155] mb-6">
             My Borrowed Books
           </h1>
           }
