@@ -1,4 +1,6 @@
 import axios from "axios";
+import { easeInOut } from "motion";
+import { motion } from "motion/react"
 import { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
@@ -48,7 +50,9 @@ export const FeaturedBook = () => {
                     <div className="bg-[#D9EAFD] h-[950px] md:h-[500px] rounded-lg shadow-lg p-6 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
                       {/* Book Image */}
                       <div className="flex justify-center">
-                        <img
+                        <motion.img
+                          animate={{scale : [0.9, 1.1, 0.9]}}
+                          transition={{duration: 2, delay: 1, repeat: Infinity}}
                           src={book?.coverURL}
                           alt={book?.bookTitle}
                           className="w-64 h-fit rounded-md shadow-2xl"
@@ -88,9 +92,12 @@ export const FeaturedBook = () => {
                         </p>
 
                         <Link to={`/book/${book?._id}`}>
-                          <button className="w-full py-2 px-4 bg-[#9AA6B2] hover:bg-[#BCCCDC] text-white font-medium rounded-md transition">
+                          <motion.button 
+                            animate={{backgroundColor: ["#1E293B", "#9AA6B2", "#1E293B"]}}
+                            transition={{duration: 2, delay: 1, repeat: Infinity}}
+                          className="w-full py-2 px-4 text-white font-medium rounded-md transition">
                             Read More
-                          </button>
+                          </motion.button>
                         </Link>
                       </div>
                     </div>

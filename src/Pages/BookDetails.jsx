@@ -2,7 +2,7 @@ import axios from "axios";
 import ReactStars from "react-rating-stars-component";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import { motion } from "motion/react"
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import Modal from 'react-modal';
@@ -116,7 +116,9 @@ export const BookDetails = () => {
 
               <p className="text-[#6B7280] text-justify mb-6">{bookDetails?.description}</p>
 
-              <button
+              <motion.button
+              animate={{scale: [0.8, 1.1, 0.8], backgroundColor:["#9ca3af", "#334155", "#4d617c", "#9ca3af"]}}
+              transition={{duration: 2, delay: 1, repeat: Infinity}}
                 onClick={handleBorrow}
                 disabled={bookDetails?.bookQuantity === 0}
                 className={`py-2 px-4 rounded-md text-white font-medium ${
@@ -126,7 +128,7 @@ export const BookDetails = () => {
                 }`}
               >
                 {bookDetails?.bookQuantity > 0 ? "Borrow Book" : "Out of Stock"}
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>

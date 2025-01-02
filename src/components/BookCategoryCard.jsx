@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { easeInOut } from "motion";
+import { motion } from "motion/react"
 export const BookCategoryCard = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
@@ -31,12 +32,13 @@ export const BookCategoryCard = () => {
               </h3>
               <p className="text-sm text-[#475569]">{category.description}</p>
               <Link to={`/category/${category.name}`}>
-                <button
-                  
-                  className="mt-4 bg-[#1E293B] hover:bg-[#334155] text-white font-medium py-2 px-4 rounded-md"
+                <motion.button
+                   animate={{backgroundColor: ["#1E293B", "#5a7499", "#1E293B"]}}
+                   transition={{duration: 3, delay: 2, repeat: Infinity}}
+                  className="mt-4  text-white font-medium py-2 px-4 rounded-md"
                 >
                   Explore Books
-                </button>
+                </motion.button>
               </Link>
             </div>
           ))}

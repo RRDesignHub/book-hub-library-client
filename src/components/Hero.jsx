@@ -1,9 +1,9 @@
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { motion } from "motion/react";
 import mobileBg from "./../assets/mobile_bg.png";
 import { Link } from "react-router-dom";
 export const Hero = () => {
@@ -43,11 +43,15 @@ export const Hero = () => {
               <p className="text-lg max-sm:hidden text-blue-50 md:text-xl mb-4">
                 Discover a world of knowledge with just a click!
               </p>
-              <Link
-                to="/category/Science"
-                className="btn max-sm:mt-12  max-sm:bg-[#334155] md:bg-blue-100 text-[#5896d3] hover:bg-blue-200 px-6 py-3 rounded-lg"
-              >
-                Explore Now
+              <Link>
+                <motion.button
+                animate={{scale : [1, 1.1, 1]}}
+                transition={{duration: 2, delay: 1, repeat: Infinity}}
+                  to="/category/Science"
+                  className="btn max-sm:mt-12  max-sm:bg-[#334155] md:bg-blue-100 text-[#5896d3] hover:bg-blue-200 px-6 py-3 rounded-lg"
+                >
+                  Explore Books
+                </motion.button>
               </Link>
             </div>
           </div>
@@ -71,14 +75,19 @@ export const Hero = () => {
               </p>
               <Link
                 to="/category/Parenting"
-                className="btn border bg-blue-100 text-[#5896d3] hover:bg-blue-200 hover:text-[#334155] px-6 py-3 rounded-lg"
+                
               >
+                <motion.button 
+                animate={{rotate : [0, 5, -5, 0]}}
+                transition={{duration: 2, delay: 1, repeat: Infinity}}
+                className="btn border bg-blue-100 text-[#5896d3] hover:bg-blue-200 hover:text-[#334155] px-6 py-3 rounded-lg">
                 Explore Now
+                </motion.button>
               </Link>
             </div>
           </div>
         </SwiperSlide>
-         <SwiperSlide>
+        <SwiperSlide>
           <div className="w-full  relative">
             <img
               src="https://i.ibb.co.com/T8Ng0j0/Slide-1.jpg"
@@ -96,13 +105,20 @@ export const Hero = () => {
               </p>
               <Link
                 to="/category/Fiction"
-                className="btn max-sm:mt-8 bg-[#5896d3] text-blue-100 hover:bg-blue-300 px-6 py-3 rounded-lg "
+                
               >
-                Explore Now
+                <motion.button
+                className="btn max-sm:mt-8 bg-[#5896d3] text-black hover:bg-blue-300 px-6 py-3 rounded-lg "
+                animate={{scale : [1,1.1, 1], backgroundColor: ["#5896d3", "#dbeafe", "#5896d3"]}}
+                transition={{duration: 4, delay: 2, repeat: Infinity}}
+                
+                >
+                  Explore Now
+                </motion.button>
               </Link>
             </div>
           </div>
-        </SwiperSlide> 
+        </SwiperSlide>
       </Swiper>
     </>
   );
