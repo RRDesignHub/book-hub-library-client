@@ -36,8 +36,8 @@ export const Hero = () => {
               alt="Slider Image"
             />
 
-            <div className="absolute top-[280px] left-1/2 -translate-x-1/2 md:top-[300px]  lg:top-[310px] md:left-1/2 transform md:-translate-y-1/2 lg:-translate-x-1/2  max-sm:text-[#334155] md:text-white text-center">
-              <h1 className="text-4xl max-sm:text-center md:text-6xl font-bold mb-1">
+            <div className="absolute top-[280px] left-1/2 transform -translate-x-1/2 md:top-1/2  md:-translate-y-1/2 text-center md:bg-gray-950 md:bg-opacity-40 md:p-6 md:rounded-xl">
+              <h1 className="text-4xl text-blue-950 md:text-white max-sm:text-center md:text-6xl font-bold mb-1">
                 Book Hub
               </h1>
               <p className="text-lg max-sm:hidden text-blue-50 md:text-xl mb-4">
@@ -45,7 +45,7 @@ export const Hero = () => {
               </p>
               <Link
                 to="/category/Science"
-                className="btn max-sm:mt-10  max-sm:bg-[#334155] md:bg-blue-100 text-[#5896d3] hover:bg-blue-200 px-6 py-3 rounded-lg"
+                className="btn max-sm:mt-12  max-sm:bg-[#334155] md:bg-blue-100 text-[#5896d3] hover:bg-blue-200 px-6 py-3 rounded-lg"
               >
                 Explore Now
               </Link>
@@ -64,9 +64,9 @@ export const Hero = () => {
               className="h-[500px] w-full md:hidden object-cover"
               alt="Slider Image"
             />
-            <div className="absolute top-[280px] left-1/2 -translate-x-1/2 md:top-10 lg:top-1/2 lg:-translate-y-1/2 md:left-1/2 transform bg-gray-950 bg-opacity-40 md:bg-gray-950 md:bg-opacity-35 p-6 rounded-3xl text-white text-center">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-950 bg-opacity-50 md:bg-gray-950 md:bg-opacity-40 py-6 px-8 max-sm:w-max md:p-6 rounded-3xl text-white text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-2">Book Hub</h1>
-              <p className="text-lg max-sm:hidden text-blue-50 md:text-xl mb-4">
+              <p className="text-lg text-blue-50 md:text-xl mb-4">
                 Where Books Meet Efficiency!
               </p>
               <Link
@@ -89,14 +89,14 @@ export const Hero = () => {
               className="h-[500px] w-full md:hidden object-cover"
               alt="Slider Image"
             />
-            <div className="absolute top-[280px] left-1/2 -translate-x-1/2 md:top-[300px] lg:top-[250px] md:left-1/2 transform md:-translate-y-1/2 lg:-translate-x-1/2 text-white text-center bg-gray-950 bg-opacity-40 md:bg-gray-950 md:bg-opacity-25 p-6 rounded-3xl">
+            <div className="absolute w-max top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 md:left-1/2 text-white text-center bg-gray-950 bg-opacity-40 px-8 py-6 md:p-6 rounded-3xl">
               <h1 className="text-4xl md:text-6xl font-bold mb-1">Book Hub</h1>
               <p className="text-lg max-sm:hidden text-blue-50 md:text-xl mb-4">
                 Effortless Library Management, One Click Away...
               </p>
               <Link
                 to="/category/Fiction"
-                className="btn bg-[#5896d3] text-blue-100 hover:bg-blue-300 px-6 py-3 rounded-lg "
+                className="btn max-sm:mt-8 bg-[#5896d3] text-blue-100 hover:bg-blue-300 px-6 py-3 rounded-lg "
               >
                 Explore Now
               </Link>

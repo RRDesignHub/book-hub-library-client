@@ -84,7 +84,7 @@ export const FeaturedBook = () => {
                         </div>
 
                         <p className="text-[#6B7280] text-justify mb-6">
-                          {book?.description.slice(0,200)}...
+                          {book?.description.slice(0,150)}...
                         </p>
 
                         <Link to={`/book/${book?._id}`}>
