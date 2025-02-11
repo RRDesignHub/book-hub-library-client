@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet";
 import React, { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
-import Loading from "../components/Loading";
-export const AllBooks = () => {
+import Loading from "../../components/Loading";
+export const UpdateBooks = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showAvailable, setShowAvailable] = useState(false);
@@ -28,7 +28,7 @@ export const AllBooks = () => {
   return (
     <>
       <Helmet>
-        <title>BH - All Books</title>
+        <title>BH - Update Books</title>
       </Helmet>
       {loading ? (
         <Loading></Loading>
@@ -78,9 +78,14 @@ export const AllBooks = () => {
                       {book?.bookTitle}
                     </h3>
                     <p className="text-sm text-gray-600 mb-1">
-                      By {book?.authorName}
+                      Author: {book?.authorName}
                     </p>
-                   
+                    <p className="text-sm text-gray-600 mb-1">
+                      Category: {book?.bookCategory}
+                    </p>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Quantity: {book?.bookQuantity}
+                    </p>
                     <div className="flex items-center gap-1 text-sm text-gray-600 mb-3">
                       Rating:
                       <ReactStars
@@ -92,9 +97,9 @@ export const AllBooks = () => {
                       />
                     </div>
                     <div className="flex-grow"></div>
-                    <Link to={`/book/${book?._id}`}>
+                    <Link to={`/update/${book?._id}`}>
                       <button className="w-full py-2 px-4 bg-[#334155] hover:bg-[#9AA6B2] text-white font-medium rounded-md transition">
-                        Details
+                        Update
                       </button>
                     </Link>
                   </div>

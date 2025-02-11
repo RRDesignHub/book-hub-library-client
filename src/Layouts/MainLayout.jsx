@@ -5,11 +5,11 @@ import { Navbar } from "../components/Navbar"
 export const MainLayout = () => {
   return (
     <>
-      <header className="bg-[#F8FAFC] border-b border-[#BCCCDC] shadow-sm">
+      <header className="bg-[#D9EAFD] fixed z-40 w-full shadow-sm ">
         <Navbar></Navbar>
       </header>
 
-      <main className="min-h-[calc(100vh-420px)] bg-[#F8FAFC]">
+      <main className="pt-[68px] min-h-[calc(100vh-420px)] bg-[#F8FAFC]">
         <Outlet></Outlet>
       </main>
 
