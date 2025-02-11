@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "./../assets/Logo.png";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 export const Footer = () => {
   return (
     <footer className="bg-[#D9EAFD] text-blue-950 py-10">
@@ -86,7 +86,7 @@ export const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
           <p className="text-gray-700">
-            Email:{"ripanulalam2000@gmail.com "}
+            Email: {"ripanulalam2000@gmail.com "}
             <a
               href="ripanulalam8@gmail.com"
               className="text-blue-950 hover:underline"
@@ -96,14 +96,17 @@ export const Footer = () => {
           </p>
           <p className="text-gray-700">Phone: +123 456 789</p>
           <div className="flex gap-4 mt-4">
-            <a href="#" className="text-gray-700 hover:text-blue-950">
+            <a href="https://www.facebook.com/rrdesignhub" className="text-gray-700 hover:text-blue-950">
               <FaFacebook className="text-xl" />
             </a>
-            <a href="#" className="text-gray-700 hover:text-blue-950">
+            <a href="https://x.com/RipanulR18324" className="text-gray-700 hover:text-blue-950">
               <FaTwitter className="text-xl" />
             </a>
-            <a href="#" className="text-gray-700 hover:text-blue-950">
-              <FaInstagram className="text-xl" />
+            <a href="https://www.linkedin.com/in/ripanul-alam-ridoy-ab00652a6" className="text-gray-700 hover:text-blue-950">
+              <FaLinkedin className="text-xl" />
+            </a>
+            <a href="https://github.com/RRDesignHub" className="text-gray-700 hover:text-blue-950">
+              <FaGithub className="text-xl" />
             </a>
           </div>
         </div>
@@ -115,7 +118,7 @@ export const Footer = () => {
           &copy; {new Date().getFullYear()} Book Hub. All Rights Reserved.
           Designed & Developed by{" "}
           <Link
-            to="https://ripanulalam.netlify.app"
+            to="https://ripanul-alam.netlify.app"
             className="font-semibold underline"
           >
             Ripanul Alam Ridoy

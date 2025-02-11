@@ -43,11 +43,11 @@ export const Hero = () => {
               <p className="text-lg max-sm:hidden text-blue-50 md:text-xl mb-4">
                 Discover a world of knowledge with just a click!
               </p>
-              <Link>
+              <Link to="/allBooks">
                 <motion.button
                 animate={{scale : [1, 1.1, 1]}}
                 transition={{duration: 2, delay: 1, repeat: Infinity}}
-                  to="/category/Science"
+                  
                   className="btn max-sm:mt-12  max-sm:bg-[#334155] md:bg-blue-100 text-[#5896d3] hover:bg-blue-200 px-6 py-3 rounded-lg"
                 >
                   Explore Books

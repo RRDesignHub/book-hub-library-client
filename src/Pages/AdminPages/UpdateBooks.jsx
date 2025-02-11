@@ -119,15 +119,7 @@ export const UpdateBooks = () => {
                       <th className="px-4 py-2 border-b border-[#BCCCDC] text-[#334155]">
                         Author
                       </th>
-                      <th className="px-4 py-2 border-b border-[#BCCCDC] text-[#334155]">
-                        Category
-                      </th>
-                      <th className="px-4 py-2 border-b border-[#BCCCDC] text-[#334155]">
-                        Quantity
-                      </th>
-                      <th className="px-4 py-2 border-b border-[#BCCCDC] text-[#334155]">
-                        Rating
-                      </th>
+                      
                       <th className="px-4 py-2 border-b border-[#BCCCDC] text-[#334155]">
                         Actions
                       </th>
@@ -152,12 +144,7 @@ export const UpdateBooks = () => {
                         <td className="px-4 py-2 border-b border-[#BCCCDC] text-[#334155]">
                           {book?.authorName}
                         </td>
-                        <td className="px-4 py-2 border-b border-[#BCCCDC] text-[#334155]">
-                          {book?.bookCategory}
-                        </td>
-                        <td className="px-4 py-2 border-b border-[#BCCCDC] text-[#334155]">
-                          {book?.bookQuantity}
-                        </td>
+                        
                         <td className="px-4 py-2 border-b border-[#BCCCDC] text-[#334155]">
                           <ReactStars
                             count={5}
