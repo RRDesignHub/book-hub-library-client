@@ -1,7 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "./../assets/Logo.png";
 import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import useAuth from "../Hooks/useAuth";
 export const Footer = () => {
+  const { user } = useAuth();
   return (
     <footer className="bg-[#D9EAFD] text-blue-950 py-10">
       <div className="divider mt-0"></div>
@@ -23,62 +25,58 @@ export const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
           <ul className="space-y-2">
-          <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
-              : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
-          }
-          to="/"
-        >
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
-              : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
-          }
-          to="/allBooks"
-        >
-          All Books
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
-              : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
-          }
-          to="/addBook"
-        >
-          Add Book
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
-              : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
-          }
-          to="/borrowedBooks"
-        >
-          Borrowed Books
-        </NavLink>
-      </li>
             <li>
-              <a
-                href="/"
-                className="text-gray-700 hover:text-blue-950 hover:underline"
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
+                    : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
+                }
+                to="/"
               >
-                Contact Us
-              </a>
+                Home
+              </NavLink>
             </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
+                    : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
+                }
+                to="/allBooks"
+              >
+                All Books
+              </NavLink>
+            </li>
+            {user && (
+              <>
+                <li>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive
+                        ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
+                        : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
+                    }
+                    to="/addBook"
+                  >
+                    Add Book
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive
+                        ? "bg-transparent text-[#4A5568] font-semibold underline focus:bg-transparent"
+                        : "text-[#718096] hover:text-[#4A5568] hover:underline focus:text-[#4A5568]"
+                    }
+                    to="/borrowedBooks"
+                  >
+                    Borrowed Books
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
 
@@ -96,16 +94,28 @@ export const Footer = () => {
           </p>
           <p className="text-gray-700">Phone: +123 456 789</p>
           <div className="flex gap-4 mt-4">
-            <a href="https://www.facebook.com/rrdesignhub" className="text-gray-700 hover:text-blue-950">
+            <a
+              href="https://www.facebook.com/rrdesignhub"
+              className="text-gray-700 hover:text-blue-950"
+            >
               <FaFacebook className="text-xl" />
             </a>
-            <a href="https://x.com/RipanulR18324" className="text-gray-700 hover:text-blue-950">
+            <a
+              href="https://x.com/RipanulR18324"
+              className="text-gray-700 hover:text-blue-950"
+            >
               <FaTwitter className="text-xl" />
             </a>
-            <a href="https://www.linkedin.com/in/ripanul-alam-ridoy-ab00652a6" className="text-gray-700 hover:text-blue-950">
+            <a
+              href="https://www.linkedin.com/in/ripanul-alam-ridoy-ab00652a6"
+              className="text-gray-700 hover:text-blue-950"
+            >
               <FaLinkedin className="text-xl" />
             </a>
-            <a href="https://github.com/RRDesignHub" className="text-gray-700 hover:text-blue-950">
+            <a
+              href="https://github.com/RRDesignHub"
+              className="text-gray-700 hover:text-blue-950"
+            >
               <FaGithub className="text-xl" />
             </a>
           </div>
