@@ -57,7 +57,7 @@ export const Login = () => {
         </div>
 
         {/* Login Form Section */}
-        <div className="card bg-[#D9EAFD] w-full shadow-2xl lg:w-1/2">
+        <div className="card bg-[#D9EAFD] rounded-lg w-full shadow-2xl lg:w-1/2">
           <form className="card-body pb-0" onSubmit={handleLogin}>
             {/* Email Input */}
             <div className="form-control">
