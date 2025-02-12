@@ -2,11 +2,12 @@ import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import {toast} from "react-hot-toast"
+import { toast } from "react-hot-toast";
 export const Register = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const {authRegister, setUser, loginWithGoogle, updateUser} = useContext(AuthContext);
+  const { authRegister, setUser, loginWithGoogle, updateUser } =
+    useContext(AuthContext);
   const [passwordError, setPasswordError] = useState("");
   const validatePassword = (pass) => {
     const uppercase = /[A-Z]/.test(pass);
@@ -43,49 +44,53 @@ export const Register = () => {
     };
 
     authRegister(email, password)
-    .then(result =>{
-      setUser(result.user);
-      toast.success(`${name} successfully registered!`)
-      
-      updateUser(name, photoUrl);
-      navigate(location.state ? `${location.state}` : "/");
-    }).catch(error =>{
-      if (error.code === "auth/invalid-email") {
-        toast.error("The email address is not valid.");
-      } else if (error.code === "auth/weak-password") {
-        toast.error("The password is too weak.");
-      } else if (error.code === "auth/email-already-in-use") {
-        toast.error("The email is already registered.");
+      .then((result) => {
+        setUser(result.user);
+        toast.success(`${name} successfully registered!`);
 
-      } else if (error.code === "auth/operation-not-allowed") {
-        toast.error("Email/password accounts are not enabled.");
-      } else {
-        toast.error("An unexpected error occurred.");
-      }
-    });
-    
+        updateUser(name, photoUrl);
+        navigate(location.state ? `${location.state}` : "/");
+      })
+      .catch((error) => {
+        if (error.code === "auth/invalid-email") {
+          toast.error("The email address is not valid.");
+        } else if (error.code === "auth/weak-password") {
+          toast.error("The password is too weak.");
+        } else if (error.code === "auth/email-already-in-use") {
+          toast.error("The email is already registered.");
+        } else if (error.code === "auth/operation-not-allowed") {
+          toast.error("Email/password accounts are not enabled.");
+        } else {
+          toast.error("An unexpected error occurred.");
+        }
+      });
   };
   const handleGoogleLogin = () => {
     loginWithGoogle()
       .then((result) => {
         setUser(result.user);
-        toast.success(`User successfully login!`)
+        toast.success(`User successfully login!`);
         navigate(location.state ? `${location.state}` : "/");
       })
       .catch((err) => {
         console.log(err.code);
-        toast.error(err.code)
+        toast.error(err.code);
       });
-
   };
-  
+
   return (
-    <div className="flex items-center justify-center w-11/12 mx-auto ">
-      <div className="w-full max-w-md bg-[#D9EAFD] shadow-lg rounded-lg p-8 my-10">
-        <h1 className="text-2xl md:text-3xl font-bold text-center text-[#2C3E50] mb-3">
-          Create an Account
+    <div className="hero-content flex-col lg:flex-row-reverse md:w-11/12 mx-auto my-5">
+      <div className="text-center lg:text-left w-full lg:w-1/2">
+        <h1 className="text-5xl font-bold text-[#2E384D]">
+          Join Book Hub Today!
         </h1>
-        <form onSubmit={handleRegister}>
+        <p className="py-6 text-[#6C7983]">
+          Create an account to explore a world of books. Save your favorites,
+          track your reading progress, and connect with fellow book lovers.
+        </p>
+      </div>
+      <div className="card bg-[#D9EAFD] rounded-lg w-full shadow-2xl lg:w-1/2 ">
+        <form onSubmit={handleRegister} className="card-body">
           <div className="form-control mb-4">
             <label className="label">
               <span className="label-text font-semibold text-[#34495E]">
@@ -146,7 +151,6 @@ export const Register = () => {
                 {passwordError}
               </p>
             )}
-            
           </div>
           <div className="form-control">
             <button
@@ -157,19 +161,24 @@ export const Register = () => {
             </button>
           </div>
         </form>
-        <div className="divider my-6 ">OR</div>
-        <button
-          onClick={handleGoogleLogin}
-          className="btn btn-outline w-full flex items-center justify-center gap-2 border-[#BCCCDC] text-[#34495E] hover:border-[#9AA6B2] hover:text-white"
-        >
-          <FcGoogle className="text-2xl" /> Continue with Google
-        </button>
-        <p className="text-center mt-4 text-[#34495E]">
-          Already have an account?{" "}
-          <Link to="/login" className="text-[#2C3E50] font-semibold hover:underline">
-            Login here
-          </Link>
-        </p>
+        <div className="p-8">
+          <div className="divider mt-0 mb-5">OR</div>
+          <button
+            onClick={handleGoogleLogin}
+            className="btn btn-outline w-full flex items-center justify-center gap-2 border-[#BCCCDC] text-[#34495E] hover:border-[#9AA6B2] hover:text-white"
+          >
+            <FcGoogle className="text-2xl" /> Continue with Google
+          </button>
+          <p className="text-center mt-4 text-[#34495E]">
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="text-[#2C3E50] font-semibold hover:underline"
+            >
+              Login here
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
